@@ -1,71 +1,102 @@
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/295873404?s=512" alt="ZNE Raid Bot" width="200" height="200">
+  <img src="https://avatars.githubusercontent.com/u/295873404?s=512" alt="ZNE Raid Bot Logo" width="180" height="180">
 </p>
 
 <h1 align="center">ZNE Raid Bot</h1>
 
-<p align="center">A powerful Discord bot built with discord.py for raiding, spamming, and managing servers.</p>
+<p align="center">
+  <strong>An advanced, high-performance Discord utility and automation bot engineered with discord.py.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python Version">
+  <img src="https://img.shields.io/badge/discord.py-rewrite-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord.py">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
+</p>
 
 ---
 
-## Features
-
-- **Raid** — Insanely Fast Raid Command
-- **Interaction Raid** — Send bursts of messages via one button (up-to unlimited)
-- **Spam** — Send custom messages or files on repeat
-- **Thug** — Gay porn spamming for fun
-- **Fake Nitro** — Deploy fake nitro giveaways and hoaxes
-- **Fake Giveaway** — Host counterfeit giveaways
-- **Ghost** — Ghost mention and ghost ping tools
-- **DM Raid** — Direct message flooding tools
-- **Ads** — Automatic advertisement posting
-- **Leaderboard** — Track top raiders 
-- **Admin Tools** — Reload cogs, set global messages, blacklist servers/users
+## 📖 Table of Contents
+- [⚡ Core Features](#-core-features)
+- [📁 Project Architecture](#-project-architecture)
+- [🛠️ Installation & Setup](#️-installation--setup)
+- [⚙️ Configuration](#️-configuration)
+- [🚀 Execution](#-execution)
+- [🧩 Tech Stack](#-tech-stack)
+- [⚠️ Disclaimer](#️-disclaimer)
 
 ---
 
-## Installation
+## ⚡ Core Features
+
+| Feature | Description |
+| :--- | :--- |
+| **Rapid Raid** | High-speed execution engine for coordinated mass actions. |
+| **Interaction Raid** | Burst-fire messaging arrays triggered via unified interface buttons. |
+| **Advanced Spam** | Configurable loops for custom text payloads and file drops. |
+| **Payload Utilities** | Specialized text and media delivery modules. |
+| **Social Engineering** | Integrated fake Nitro generator hoaxes and automated giveaway tools. |
+| **Stealth Tools** | Ghost ping and ghost mention frameworks for subtle tracking. |
+| **DM Flood** | Automated direct message distribution pipelines. |
+| **Outreach** | Scheduled and automated advertisement posting across channels. |
+| **Leaderboards** | LMDB-backed high-performance tracking for active operators. |
+| **Administration** | Hot-swappable cogs, dynamic global messaging, and granular blacklists. |
+
+---
+
+## 📁 Project Architecture
+
+```text
+ZNE-Raid-Bot/
+├── cogs/               # Modular feature extensions
+├── data/               # LMDB database storage
+├── main.py             # Application entry point
+├── config.example.toml # Template configuration file
+├── requirements.txt    # Python dependencies
+└── README.md           # Documentation
+
+```
+
+---
+
+## 🛠️ Installation & Setup
 
 ### Prerequisites
 
-- [Python 3.10+](https://www.python.org/)
-- [You're Brain](https://zne.breed.rip/)
+* [Python 3.10 or higher](https://www.python.org/)
+* Recommended: [uv](https://docs.astral.sh/uv/) for lightning-fast environment provisioning.
 
-### Setup
+### Quick Start
 
 ```bash
-# Clone the repo
-git clone https://github.com/ZNE-Opensource-Project/zne-raid-bot.git ZNE/Raid-Bot
-cd ZNE/Raid-Bot
+# Clone the repository
+git clone https://github.com/ZNE-Opensource-Project/zne-raid-bot.git](https://github.com/ZNE-Opensource-Project/zne-raid-bot.git ZNE/Raid
+cd ZNE/Raid
 
-# Create a virtual environment (standard venv)[OPTIONAL]
-python -m venv .venv
+# Set up environment using uv (Recommended)
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\Activate.ps1
+uv pip install -r requirements.txt
 
-# On Windows (PowerShell)
-.\.venv\Scripts\Activate.ps1
+# Fallback standard venv installation
+# python -m venv .venv
+# source .venv/bin/activate  # On Windows: .venv\Scripts\Activate.ps1
+# pip install -r requirements.txt
 
-# On Linux / macOS
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
 ```
 
-> **Optional:** If you prefer [uv](https://docs.astral.sh/uv/) for faster installs, you can use `uv venv` and `uv pip install -r requirements.txt` instead.
+---
 
-### Configuration
+## ⚙️ Configuration
 
-Copy the example config and fill in your values:
+Initialize your configuration file from the provided template:
 
 ```bash
 cp config.example.toml config.toml
-# Windows
-copy config.example.toml config.toml
+
 ```
 
-> **Note:** The `[api]` section in `config.toml` is used for leaderboard syncing and command tracking. These features rely on the companion website. You do not need to configure `[api]` unless you are running your own instance of the [ZNE Website](https://github.com/ZNE-Opensource-Project/zne-website/).
-
-Edit `config.toml`:
+Populate `config.toml` with your operational parameters:
 
 ```toml
 TOKEN = "your-bot-token-here"
@@ -79,25 +110,34 @@ verified_role_id = 0
 log_channel_id = 0
 
 [messages]
-og_msg = """your default raid message here"""
+og_msg = "your default payload message here"
 
 [api]
+# Optional: Required only if running the ZNE Website companion backend
 url = "your-api-url"
 secret = "your-api-secret"
-```
 
-### Running
-
-```bash
-python main.py
 ```
 
 ---
 
-## Tech Stack
+## 🚀 Execution
 
-- [discord.py](https://discordpy.readthedocs.io/) — Discord API wrapper
-- [LMDB](https://lmdb.readthedocs.io/) — High-performance leaderboard storage
-- [aiohttp](https://docs.aiohttp.org/) — Async HTTP for API posting
+Launch the application loop:
 
-> **uv** (optional) — Fast package & venv management, if you prefer it over standard `venv`/`pip`
+```bash
+python main.py
+
+```
+
+---
+
+## 🧩 Tech Stack
+
+* **Core Wrapper:** [discord.py](https://discordpy.readthedocs.io/)
+* **Storage Engine:** [LMDB](https://lmdb.readthedocs.io/) (Lightning Memory-Mapped Database) for ultra-fast leaderboard syncing.
+* **Network Layer:** [aiohttp](https://docs.aiohttp.org/) for asynchronous API communication.
+
+```
+
+```
