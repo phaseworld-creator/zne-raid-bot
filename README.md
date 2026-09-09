@@ -137,7 +137,3 @@ python main.py
 * **Core Wrapper:** [discord.py](https://discordpy.readthedocs.io/)
 * **Storage Engine:** [LMDB](https://lmdb.readthedocs.io/) (Lightning Memory-Mapped Database) for ultra-fast leaderboard syncing.
 * **Network Layer:** [aiohttp](https://docs.aiohttp.org/) for asynchronous API communication.
-
-```
-
-```
